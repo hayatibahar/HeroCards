@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hero_graph"
+    app:startDestination="@id/heroListFragment">
+
+    <fragment
+        android:id="@+id/heroListFragment"
+        android:name="com.cloud.herocards.view.HeroListFragment"
+        android:label="fragment_hero_list"
+        tools:layout="@layout/fragment_hero_list" >
+        <action
+            android:id="@+id/action_heroListFragment_to_heroCardFragment"
+            app:destination="@id/heroCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heroCardFragment"
+        android:name="com.cloud.herocards.view.HeroCardFragment"
+        android:label="fragment_hero_card"
+        tools:layout="@layout/fragment_hero_card" >
+        <action
+            android:id="@+id/action_heroCardFragment_to_heroListFragment"
+            app:destination="@id/heroListFragment" />
+        <argument
+            android:name="heroId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

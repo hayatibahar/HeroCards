@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="selectedHero"
+            type="com.cloud.herocards.model.Hero" />
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.HeroCardFragment"
+    >
+
+    <ImageView
+        android:id="@+id/heroImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentTop="true"
+        android:downloadImage="@{selectedHero.image}"
+        android:minHeight="200dp"
+        android:scaleType="center"
+        >
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroName"
+        android:layout_below="@+id/heroImage"
+        android:text="@{selectedHero.name}"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroQuirk"
+        android:layout_below="@+id/heroName"
+        android:text="@{`Quirk: ` +selectedHero.quirk}"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroDescription"
+        android:textAlignment="center"
+        android:layout_below="@+id/heroQuirk"
+        android:text="@{selectedHero.description}"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroAffiliation"
+        android:layout_below="@+id/heroDescription"
+        android:text="@{`Affiliation: ` +selectedHero.affiliation}"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroBirthday"
+        android:layout_below="@+id/heroAffiliation"
+        android:text="@{`Birthday: ` +selectedHero.birthday}"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroHeight"
+        android:layout_below="@+id/heroBirthday"
+        android:text="@{`Height: ` +selectedHero.height}"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroBloodtype"
+        android:layout_below="@+id/heroHeight"
+        android:text="@{`Blood type: ` +selectedHero.bloodtype}"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heroLikes"
+        android:layout_below="@+id/heroBloodtype"
+        android:text="@{`Likes: ` +selectedHero.likes}"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        >
+    </TextView>
+
+
+</RelativeLayout>
+
+
+</layout>

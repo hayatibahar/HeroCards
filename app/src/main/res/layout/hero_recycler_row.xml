@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <variable
+            name="hero"
+            type="com.cloud.herocards.model.Hero" />
+        <variable
+            name="listener"
+            type="com.cloud.herocards.adapter.HeroClickListener" />
+    </data>
+<LinearLayout
+    android:orientation="horizontal"
+    android:onClick="@{listener::heroClicked}"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+    <TextView
+        android:id="@+id/hero_uuid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@{String.valueOf(hero.uuid)}"
+        >
+    </TextView>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        android:layout_weight="2"
+        android:downloadImage="@{hero.image}"
+        >
+    </ImageView>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="3"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{hero.name}"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/quirk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{hero.quirk}"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
+</layout>
